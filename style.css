@@ -340,7 +340,7 @@ body{
     }
     .firstCont{
         display: flex;
-
+        justify-content: center;
     }
     .miniCont2 {
         display: none;
