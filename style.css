@@ -108,9 +108,7 @@ body{
     /*background-color: rgba(137, 43, 226, 0.178);*/
     display: grid;
     grid-template-columns: 5fr 2fr 5fr;
-    height: 35vh;
     font-size: 2vh;
-
     /*Quiero que el contenido este en los extremos*/
 
 }
@@ -262,7 +260,6 @@ body{
     display: grid;
     grid-template-columns: 2fr 2fr 1fr;
     padding: 1vh;
-    height: 8vh;
 
 }
 
@@ -295,6 +292,10 @@ body{
     color: white;
 
 }
+.titleBlock1 span{
+    display: flex;
+    flex-direction: column;
+}
 
 /*
 .fourTitle p{
@@ -306,50 +307,63 @@ body{
 */
 
 @media screen and (max-width: 660px) {
-
     
     .sixTitle > p, .fiveTitle > p {
         color: white;
     }
     .secondTitle > p {
         color: white;
+        font-size: 1.5rem;
     }
-    .container-background{
-        width: 100%;
+    .container-background {
         height: 100vh;
+        width: 90%;
+    }
+    .container-background img{
+        display: none;
     }
     .container {
-        display: grid;
-        grid-template-areas: "head head"
-                             "first second"
-                             "third four"
-                             "five six";
-        gap: 20px;
-        width: 80%;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+        height: 100vh;
+        width: 90%;
+    }
+    ::-webkit-scrollbar {
+        display: none;
+    }
+    .miniCont1{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
     }
     .miniCont2 {
         display: none;
     }
-    .titleCont {
-        grid-area: head;
+    .miniCont3 {
+        display: flex;
+        align-items: center;
     }
-    .firstSec {
-        grid-area: first;
-    }
-    .secondSec {
-        grid-area: second;
-    }
-    .thirdSec {
-        grid-area: third;
-    }
-    .fourSec {  
-        grid-area: four;
-    }
-    .fiveSec {
-        grid-area: five;
-    }
-    .sixSec {
-        grid-area: six;
+   .titleBlock1{    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   }
+   .firstSec {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   .firstTitle {
+    width: 100%;
+
+   }
+    .fourSec {
+        display: flex;
+        flex-direction: column;
+        float: left;
+        margin: 15px;
     }
     .fourSec .fourTitle, .fiveCont{
         display: none;
@@ -357,22 +371,32 @@ body{
     .middleTitle{
         display: none;
     }
-    .miniCont1{
-        display: flex;
-        flex-direction: column;
+    .subMiniCont1 {
+        display:block;
     }
-    .miniCont3 {
+    .titleBlock1 p {
+        font-size: 1.9rem;
+    }
+    .textList p{
+        font-size: 1rem;
+    }
+    .titleBlock1 span{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 8px;
+    }   
+}
+
+@media screen and (max-width: 420px) {
+    .fourSec {
+        display: none;
     }
 }
 
 .titles, .fourTitle p{
-
     font-family: 'PT Sans Narrow', sans-serif;
     color: var(--naranja);
     font-size: 2.8vh;
-
 }
 .fiveSec{
     padding-top: 4vh;
@@ -381,7 +405,6 @@ body{
 .sixCont{
     font-size: 2vh;
 }
-
 
 .sevenCont img{
     width: 3vh;
